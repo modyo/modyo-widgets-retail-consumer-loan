@@ -1,0 +1,53 @@
+{
+  "commons": {
+    "back": "Volver"
+  },
+  "main": {
+    "credit-amount": "Monto crédito",
+    "credit-amount-exceeds-msg": "El monto solicitado<br> no puede ser mayor a <strong>{available}</strong>",
+    "credit-minimum-amount-insert-msg": "Ingresa el monto y selecciona las cuotas para <strong>comenzar la simulación.</strong>",
+    "credit-quote-increase-request": "Si necesitas más dinero, <a href=\"#\">solicita un <strong>aumento de cupo</strong></a>",
+    "deposit-to-account": "Abono en cuenta",
+    "disencumbrance": "Desgravamen",
+    "fees": "Cuotas",
+    "insurances": "Seguros",
+    "minimum-credit-msg": "El monto mínimo para crédito es de {amount}",
+    "months-of-grace": "Meses de gracia",
+    "no-payment-dates": "Fechas de no pago",
+    "select-month-of-no-payment": "Seleccionar mes de no pago (max {max})",
+    "select-to-account": "Selecciona Cuenta de Destino",
+    "simulate": "Simular",
+    "simulation-summary": {
+      "credit-total-cost": "Costo total del crédito",
+      "fee-value": "valor cuota",
+      "fees": "Cuotas",
+      "interest-rate": "Tasa Interés",
+      "monthly": "Mensual",
+      "no-fees": "Sin <br> Cuotas",
+      "request-advance-btn": "Solicitar Avance",
+      "title": "Resumen de Simulación",
+      "total-tax": "Tasa total",
+      "view-detail-btn": "Ver Detalle",
+      "yearly": "Anual"
+    },
+    "summary": {
+      "annual": "anual",
+      "annual-interest": "Interes anual",
+      "credit-total-amount": "Monto líquido del crédit",
+      "credit-total-cost": "Costo total del crédito",
+      "disgrace-insurance": "Seguro de desgravamen",
+      "equivalent-anual-load-abbr": "CAE",
+      "fees": "Cuotas",
+      "interest-rate": "Tasa de interes",
+      "monthly": "mensual",
+      "months-of-grace": "Meses de gracia",
+      "notarial-fees": "Gastos notariales",
+      "request-advance-btn": "Solicitar Avance",
+      "stamps-tax": "Impuesto Timbres y Estampillas",
+      "unemployment-insurance": "Seguro de cesantia",
+      "view-summary-btn": "Ver resumen"
+    },
+    "title": "Solicitar Crédito de Consumo",
+    "unemployment": "Cesantía"
+  }
+}
