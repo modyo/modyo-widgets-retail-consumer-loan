@@ -17,7 +17,9 @@
               :disabled="isDisabled && !option.selected"
               type="button"
               class="btn btn-light btn-selector btn-block"
-              @click="toogleSelection(option)">{{ option.label }}</button>
+              @click="toogleSelection(option)">
+              {{ option.label }}
+            </button>
           </div>
         </div>
       </div>
@@ -55,7 +57,7 @@ export default {
   },
   computed: {
     selectedOptions() {
-      return this.options.filter(option => option.selected === true).map(option => option.label);
+      return this.options.filter((option) => option.selected === true).map((option) => option.label);
     },
     isDisabled() {
       return this.selectedOptions.length >= this.maxSelectables;

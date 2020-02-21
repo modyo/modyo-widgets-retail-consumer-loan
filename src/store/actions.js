@@ -7,7 +7,7 @@ export default {
         .then((accounts) => {
           resolve(accounts);
         })
-        .catch(err => reject(err));
+        .catch((err) => reject(err));
     }));
   },
   GET_ACCOUNTS(context) {
@@ -16,7 +16,7 @@ export default {
         context.commit('SET_ACCOUNTS', accounts.data);
         return accounts;
       })
-      .catch(err => err);
+      .catch((err) => err);
   },
   GET_LOANS(context, payload) {
     return axios.post('https://api-bank.herokuapp.com/api/v1/loans/consumer-loan', payload)
