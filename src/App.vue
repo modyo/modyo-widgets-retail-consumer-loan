@@ -206,7 +206,7 @@
                             </strong>
                           </p>
                           <p class="mb-0 text-muted">
-                            {{$t('main.simulation-summary.interest-rate')}}
+                            {{ $t('main.simulation-summary.interest-rate') }}
                           </p>
                         </div>
                         <div class="col-md-6">
