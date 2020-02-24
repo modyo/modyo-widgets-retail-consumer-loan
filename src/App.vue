@@ -131,7 +131,11 @@
                 class="empty-simulation p-4">
                 <div class="header-empty-simulation" />
                 <div class="body-empty-simulation p-5">
-                  <h3 v-html="$t('main.credit-minimum-amount-insert-msg')" />
+                  <i18n
+                    path="main.credit-minimum-amount-insert-msg"
+                    tag="h3">
+                    <strong>{{ $t('main.credit-minimum-amount-insert-msg-strong') }}</strong>
+                  </i18n>
                 </div>
               </div>
 
@@ -141,9 +145,20 @@
                 <div>
                   <h3>
                     <span class="ico-light"><font-awesome-icon icon="ban" /></span>
-                    <span v-html="$t('main.credit-amount-exceeds-msg',{available:currency(available)})" />
+                    <i18n
+                      path="main.credit-amount-exceeds-msg"
+                      tag="span">
+                      <br>
+                      <strong>{{ currency(available) }}</strong>
+                    </i18n>
                   </h3>
-                  <p v-html="$t('main.credit-quote-increase-request')" />
+                  <i18n
+                    path="main.credit-quote-increase-request"
+                    tag="p">
+                    <a href="#">{{ $t('main.credit-quote-increase-request-link') }}
+                      <strong>{{ $t('main.credit-quote-increase-request-link-strong') }}</strong>
+                    </a>
+                  </i18n>
                 </div>
               </div>
 
@@ -184,8 +199,11 @@
                               v-else
                               class="">
                               <p
-                                class="zero-range"
-                                v-html="$t('main.simulation-summary.no-fees')" />
+                                class="zero-range">
+                                <i18n path="main.simulation-summary.no-fees">
+                                  <br>
+                                </i18n>
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -495,6 +513,7 @@ export default {
     this.$store.dispatch('DO_DATA_INITIALIZATION');
   },
   methods: {
+    currency,
     accountLabel(account) {
       return `${account.accountType} ${account.accountNumber}`;
     },
