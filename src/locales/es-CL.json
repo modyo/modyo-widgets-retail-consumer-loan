@@ -1,7 +1,4 @@
 {
-  "commons": {
-    "back": "Volver"
-  },
   "main": {
     "credit-amount": "Monto crédito",
     "credit-amount-exceeds-msg": "El monto solicitado {0} no puede ser mayor a {1}",
@@ -40,7 +37,6 @@
       "credit-total-cost": "Costo total del crédito",
       "disgrace-insurance": "Seguro de desgravamen",
       "equivalent-anual-load-abbr": "CAE",
-      "fees": "Cuotas",
       "interest-rate": "Tasa de interes",
       "monthly": "mensual",
       "months-of-grace": "Meses de gracia",
