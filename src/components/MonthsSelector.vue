@@ -78,19 +78,31 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/_variables.scss';
+
 .consumer-loan-months-selector{
   .card {
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid $primary-10;
   }
   .card-header {
     padding: .75rem 1.25rem;
   }
   button.btn.btn-selector.btn-block{
-    font-size:14px
+    font-size:.75rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
   }
   button.btn.btn-selector.btn-block.active {
-    background: #5cc4ef;
+    background: $primary;
     color: white;
+  }
+}
+
+@media (min-width: 576px){
+  .consumer-loan-months-selector{
+    button.btn.btn-selector.btn-block {
+      font-size:1rem;
+    }
   }
 }
 </style>
