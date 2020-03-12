@@ -1,5 +1,5 @@
 {
-  "name": "consumer-loan",
+  "name": "@modyo/retail-consumer-loan",
   "version": "0.1.0",
   "private": true,
   "scripts": {
