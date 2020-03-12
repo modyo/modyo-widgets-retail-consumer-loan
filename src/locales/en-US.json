@@ -1,22 +1,22 @@
 {
   "currency": {
     "format": {
-      "decimal": ",",
+      "decimal": ".",
       "formatWithSymbol": true,
-      "precision": 0,
-      "separator": ".",
-      "symbol": "$"
+      "precision": 2,
+      "separator": ",",
+      "symbol": "US$"
     }
   },
   "date": {
     "format": {
-      "lang": "es",
-      "last-3-months": "Últimos 3 meses",
-      "last-6-months": "Últimos 6 meses",
-      "last-month": "Mes pasado",
-      "long": "dd MMMM yyyy",
-      "short": "DD/MM/YYYY",
-      "this-month": "Este mes"
+      "lang": "en",
+      "last-3-months": "Last 3 months",
+      "last-6-months": "Last 6 months",
+      "last-month": "Last month",
+      "long": "MMMM dd, yyyy",
+      "short": "MM/DD/YYYY",
+      "this-month": "This month"
     }
   },
   "main": {
