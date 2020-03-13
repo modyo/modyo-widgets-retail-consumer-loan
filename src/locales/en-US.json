@@ -5,7 +5,7 @@
       "formatWithSymbol": true,
       "precision": 2,
       "separator": ",",
-      "symbol": "US$"
+      "symbol": "$"
     }
   },
   "date": {
@@ -16,7 +16,21 @@
       "last-month": "Last month",
       "long": "MMMM dd, yyyy",
       "short": "MM/DD/YYYY",
-      "this-month": "This month"
+      "this-month": "This month",
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      }
     }
   },
   "main": {

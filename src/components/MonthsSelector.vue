@@ -40,18 +40,18 @@ export default {
   data() {
     return {
       options: [
-        { label: 'Enero', selected: false },
-        { label: 'Febrero', selected: false },
-        { label: 'Marzo', selected: false },
-        { label: 'Abril', selected: false },
-        { label: 'Mayo', selected: false },
-        { label: 'Junio', selected: false },
-        { label: 'Julio', selected: false },
-        { label: 'Agosto', selected: false },
-        { label: 'Septiembre', selected: false },
-        { label: 'Octubre', selected: false },
-        { label: 'Noviembre', selected: false },
-        { label: 'Diciembre', selected: false },
+        { label: this.$t('date.format.months.january'), selected: false },
+        { label: this.$t('date.format.months.february'), selected: false },
+        { label: this.$t('date.format.months.march'), selected: false },
+        { label: this.$t('date.format.months.april'), selected: false },
+        { label: this.$t('date.format.months.may'), selected: false },
+        { label: this.$t('date.format.months.june'), selected: false },
+        { label: this.$t('date.format.months.july'), selected: false },
+        { label: this.$t('date.format.months.august'), selected: false },
+        { label: this.$t('date.format.months.september'), selected: false },
+        { label: this.$t('date.format.months.october'), selected: false },
+        { label: this.$t('date.format.months.november'), selected: false },
+        { label: this.$t('date.format.months.december'), selected: false },
       ],
     };
   },
@@ -78,30 +78,35 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/_variables.scss';
+@import "../scss/_variables.scss";
 
 .consumer-loan-months-selector{
   .card {
     border: 1px solid $primary-10;
   }
+
   .card-header {
     padding: .75rem 1.25rem;
   }
+
   button.btn.btn-selector.btn-block{
-    font-size:.75rem;
-    padding-left: .25rem;
     padding-right: .25rem;
+    padding-left: .25rem;
+
+    font-size: .75rem;
   }
+
   button.btn.btn-selector.btn-block.active {
-    background: $primary;
     color: white;
+
+    background: $primary;
   }
 }
 
 @media (min-width: 576px){
   .consumer-loan-months-selector{
     button.btn.btn-selector.btn-block {
-      font-size:1rem;
+      font-size: 1rem;
     }
   }
 }
