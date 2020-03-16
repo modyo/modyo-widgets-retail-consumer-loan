@@ -1,3 +1,5 @@
+const LANG = window.liquid.lang;
+
 export default {
   paramClientId: 1,
   accounts: [],
@@ -14,4 +16,5 @@ export default {
   monthlyRate: '',
   disgraceInsurance: '',
   unemploymentInsurance: '',
+  lang: LANG,
 };

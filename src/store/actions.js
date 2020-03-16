@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const LANG = window.liquid.lang;
+
+const BASE_URL = LANG === 'es-CL' ? 'https://api-bank.herokuapp.com' : 'https://dynamic-bank-api.herokuapp.com';
+
 export default {
   DO_DATA_INITIALIZATION(context) {
     return new Promise(((resolve, reject) => {
@@ -11,7 +15,7 @@ export default {
     }));
   },
   GET_ACCOUNTS(context) {
-    return axios.get(`https://api-bank.herokuapp.com/api/v1/clients/${context.state.paramClientId}/accounts`)
+    return axios.get(`${BASE_URL}/api/v1/clients/${context.state.paramClientId}/accounts`)
       .then((accounts) => {
         context.commit('SET_ACCOUNTS', accounts.data);
         return accounts;
@@ -19,7 +23,7 @@ export default {
       .catch((err) => err);
   },
   GET_LOANS(context, payload) {
-    return axios.post('https://api-bank.herokuapp.com/api/v1/loans/consumer-loan', payload)
+    return axios.post(`${BASE_URL}/api/v1/loans/consumer-loan`, payload)
       .then((loan) => {
         context.commit('SET_INTEREST_RATE', loan.data.interestRate);
         context.commit('SET_INSTALLMENT', loan.data.installment);

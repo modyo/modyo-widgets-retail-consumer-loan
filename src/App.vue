@@ -15,10 +15,11 @@
             <label for="">{{ $t('main.credit-amount') }}</label>
             <money
               v-model="amount"
+              v-bind="moneyOptions"
               class="d-block form-control"
-              v-bind="{decimal: ',', thousands: '.', prefix: '$ ', precision: 0, masked: false}"
               @input="calculateLoan" />
-            <small class="d-block mt-2">{{ $t('main.minimum-credit-msg', {amount: '$100.000'}) }}</small>
+            <small class="d-block mt-2">{{ $t('main.minimum-credit-msg',
+                                              {amount: currency(minAmount, currencyFormat)}) }}</small>
           </div>
 
           <div class="form-group">
@@ -134,7 +135,7 @@
                 {{ $t('main.simulation-summary.credit-total-cost') }}:
               </p>
               <p class="ml-3 mb-0">
-                <strong>{{ totalLoanAmount | currency }}</strong>
+                <strong>{{ totalLoanAmount | currency(currencyFormat) }}</strong>
               </p>
             </div>
 
@@ -162,7 +163,7 @@
               </div>
               <div class="d-flex flex-column justify-content-center text-right">
                 <p class="text-primary d-none d-lg-block h3">
-                  {{ monthlyAmount | currency }}
+                  {{ monthlyAmount | currency(currencyFormat) }}
                 </p>
                 <p class="text-primary d-lg-none h5">
                   {{ monthlyAmount | currency }}
@@ -237,27 +238,27 @@
             <div class="mt-4 mb-5 my-lg-4">
               <div class="d-flex justify-content-between mb-2">
                 <strong>{{ $t('main.summary.credit-total-amount') }}</strong>
-                <strong>{{ amount | currency }}</strong>
+                <strong>{{ amount | currency(currencyFormat) }}</strong>
               </div>
               <div class="d-flex justify-content-between mb-2">
                 <span>{{ $t('main.summary.stamps-tax') }}</span>
-                <span>{{ stampTax | currency }}</span>
+                <span>{{ stampTax | currency(currencyFormat) }}</span>
               </div>
               <div
                 v-if="disgrace"
                 class="d-flex justify-content-between mb-2">
                 <span>{{ $t('main.summary.disgrace-insurance') }}</span>
-                <span>{{ disgraceInsurance | currency }}</span>
+                <span>{{ disgraceInsurance | currency(currencyFormat) }}</span>
               </div>
               <div
                 v-if="unemployment"
                 class="d-flex justify-content-between mb-2">
                 <span>{{ $t('main.summary.unemployment-insurance') }}</span>
-                <span>{{ unemploymentInsurance | currency }}</span>
+                <span>{{ unemploymentInsurance | currency(currencyFormat) }}</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
                 <span>{{ $t('main.summary.notarial-fees') }}</span>
-                <span>{{ notaryFee | currency }}</span>
+                <span>{{ notaryFee | currency(currencyFormat) }}</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
                 <span>{{ $t('main.summary.months-of-grace') }}</span>
@@ -283,7 +284,7 @@
                 </div>
                 <div class="col-12 col-lg-6 text-center text-lg-right font-weight-normal">
                   <p class="h5 text-primary">
-                    {{ totalLoanAmount | currency }}
+                    {{ totalLoanAmount | currency(currencyFormat) }}
                   </p>
                 </div>
               </div>
@@ -320,7 +321,7 @@
               path="main.credit-amount-exceeds-msg"
               tag="span">
               <br>
-              <strong class="text-primary">{{ currency(available) }}</strong>
+              <strong class="text-primary">{{ currency(available, currencyFormat) }}</strong>
             </i18n>
           </h3>
           <i18n
@@ -344,10 +345,7 @@ import Multiselect from 'vue-multiselect';
 import VueSlider from 'vue-slider-component';
 import { Money } from 'v-money';
 
-import { getURLParams } from '@modyo/financial-commons';
-import { debounce } from './helpers';
-import currency from './filters';
-
+import { currency, debounce, getURLParams } from '@modyo/financial-commons';
 import MonthsSelector from './components/MonthsSelector.vue';
 
 export default {
@@ -367,8 +365,6 @@ export default {
       showSettingsView: true,
       activeDetailInfo: false,
       amount: 0,
-      minAmount: 100000,
-      available: 10000000,
       payments: 6,
       paymentSteps: [1, 6, 12, 18, 24, 30, 36],
       monthGrace: 0,
@@ -378,6 +374,7 @@ export default {
       unemployment: true,
       account: null,
       maxMonthsNoPayment: 2,
+      currencyFormat: this.$t('currency.format'),
     };
   },
 
@@ -436,6 +433,37 @@ export default {
     isRangeDisabled() {
       return (this.amount < this.minAmount);
     },
+    isLangEn() {
+      return this.$store.state.lang === 'en-US';
+    },
+    minAmount() {
+      if (this.isLangEn) {
+        return 10000;
+      }
+      return 100000;
+    },
+    available() {
+      if (this.isLangEn) {
+        return 100000;
+      }
+      return 10000000;
+    },
+    moneyOptions() {
+      if (this.isLangEn) {
+        return {
+          prefix: '$',
+          decimal: '.',
+          thousands: ',',
+          precision: 2,
+        };
+      }
+      return {
+        prefix: '$',
+        decimal: ',',
+        thousands: '.',
+        precision: 0,
+      };
+    },
   },
   watch: {
     monthsNoPayment() {
@@ -473,18 +501,22 @@ export default {
 <style src="vue-slider-component/theme/default.css"></style>
 
 <style lang="scss">
-.multiselect .multiselect__placeholder, .multiselect .multiselect__single, .multiselect .multiselect__input {
+.multiselect .multiselect__placeholder,
+.multiselect .multiselect__single,
+.multiselect .multiselect__input {
   text-transform: capitalize;
 }
 @media (max-width: 575.98px){
-  .multiselect .multiselect__placeholder, .multiselect .multiselect__single, .multiselect .multiselect__input {
-    font-size: 0.8rem;
+  .multiselect .multiselect__placeholder,
+  .multiselect .multiselect__single,
+  .multiselect .multiselect__input {
+    font-size: .8rem;
   }
 }
 </style>
 
 <style lang="scss" scoped>
-@import './scss/_variables.scss';
+@import "./scss/_variables.scss";
 
 .consumer-loan__container {
   background-color: white;
@@ -510,13 +542,18 @@ export default {
   position: absolute;
   top: 50%;
   left: 0;
-  font-size: 60px;
-  margin-left: -30px;
+
+  display: flex;
+
+  align-items: center;
+
   margin-top: -30px;
+  margin-left: -30px;
+
+  font-size: 60px;
+
   background-color: #fff;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
 }
 
 .consumer-loan__max-amount-exceeded-icon {
@@ -529,29 +566,30 @@ export default {
 
 .consumer-loan__request-quota-increase-link:hover,
 .consumer-loan__request-quota-increase-link:focus {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+
   .consumer-loan__request-quota-increase-link-strong {
     color: $primary-dark;
   }
 }
 
 .consumer-loan__request-quota-increase-link-strong {
-  text-decoration: underline;
   color: $primary;
+  text-decoration: underline;
 }
 
 @media (max-width: 991.98px){
   .consumer-loan {
     background-color: white;
   }
+
   .consumer-loan__simulation__title {
-    font-size: 1.5rem
+    font-size: 1.5rem;
   }
 }
 
 @media (min-width: 992px){
-
   .consumer-loan__summary {
     background-color: $tertiary-20;
   }
