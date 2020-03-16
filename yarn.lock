@@ -1141,10 +1141,10 @@
     ora "^4.0.3"
     pkg-install "^1.0.0"
 
-"@modyo/financial-commons@^1.0.0":
-  version "1.0.0"
-  resolved "https://npm.pkg.github.com/download/@modyo/financial-commons/1.0.0/251055ced1db85ab31875332a8f8e22e79bfbe4a31f70992680d2d11726cec8e#ac5004e9abd643aa3f9ac8480d31d2f3f5cb7217"
-  integrity sha512-1XEcxHJJnGy//rChuvARuIJDvOVJxDLJ/0yT6M3Zm/6DK55T5foQK3i78csf05aOyxhNwIyrXNfjVXJGkF2Vlw==
+"@modyo/financial-commons@^1.0.1":
+  version "1.0.1"
+  resolved "https://npm.pkg.github.com/download/@modyo/financial-commons/1.0.1/9447edcf62c7c306b52f750628566b81091d1496d6706c1a496340330708e423#13cae855aa03f648b838ecd8c9f4cd6729448f56"
+  integrity sha512-w2A7weBTEldbnxgGKaff2+7aa0AUvAQ4YJ0RGgk7xOZ9766U9EQvPslqsPY9/vjpx6YSU8FW5fVXFg9tecnq2A==
   dependencies:
     "@fullhuman/postcss-purgecss" "^2.1.0"
     "@mathieustan/vue-datepicker" "^0.2.3-rc.1"
@@ -3958,6 +3958,11 @@ date-fns@^2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.10.0.tgz#abd10604d8bafb0bcbd2ba2e9b0563b922ae4b6b"
   integrity sha512-EhfEKevYGWhWlZbNeplfhIU/+N+x0iCIx7VzKlXma2EdQyznVlZhCptXUY+BegNpPW2kjdx15Rvq503YcXXrcA==
+
+date-fns@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.11.0.tgz#ec2b44977465b9dcb370021d5e6c019b19f36d06"
+  integrity sha512-8P1cDi8ebZyDxUyUprBXwidoEtiQAawYPGvpfb+Dg0G6JrQ+VozwOmm91xYC0vAv1+0VmLehEPb+isg4BGUFfA==
 
 dayjs@^1.8.14:
   version "1.8.22"
