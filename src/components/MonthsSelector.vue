@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../scss/_variables.scss";
+@import "../scss/variables.scss";
 
 .consumer-loan-months-selector{
   .card {
@@ -89,23 +89,24 @@ export default {
     padding: .75rem 1.25rem;
   }
 
-  button.btn.btn-selector.btn-block{
+  .btn-selector.btn-block {
     padding-right: .25rem;
     padding-left: .25rem;
 
     font-size: .75rem;
+
+    &.active {
+      color: #fff;
+
+      background: $primary;
+    }
   }
 
-  button.btn.btn-selector.btn-block.active {
-    color: white;
-
-    background: $primary;
-  }
 }
 
 @media (min-width: 576px){
   .consumer-loan-months-selector{
-    button.btn.btn-selector.btn-block {
+    .btn-selector.btn-block {
       font-size: 1rem;
     }
   }
