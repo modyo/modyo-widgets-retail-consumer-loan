@@ -518,14 +518,14 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-@import "./scss/_variables.scss";
+@import "./scss/variables.scss";
 
 .consumer-loan__container {
-  background-color: white;
+  background-color: #fff;
 }
 
 .consumer-loan__summary {
-  background-color: white;
+  background-color: #fff;
 }
 
 .consumer-loan__sumary-fees-container {
@@ -533,7 +533,7 @@ export default {
 }
 
 .consumer-loan__sumary-fees-qtty {
-  background-color: white;
+  background-color: #fff;
 }
 
 .consumer-loan__simulator-details-total-credit-cost {
@@ -583,7 +583,7 @@ export default {
 
 @media (max-width: 991.98px){
   .consumer-loan {
-    background-color: white;
+    background-color: #fff;
   }
 
   .consumer-loan__simulation__title {
@@ -597,7 +597,7 @@ export default {
   }
 
   .consumer-loan__sumary-fees-container {
-    background-color: white;
+    background-color: #fff;
   }
 
   .consumer-loan__sumary-fees-qtty {
