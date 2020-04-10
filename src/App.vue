@@ -343,7 +343,7 @@
 <script>
 import Multiselect from 'vue-multiselect';
 import VueSlider from 'vue-slider-component';
-import { Money } from 'v-money';
+import { Money } from 'v-money-no-negative';
 
 import { currency, debounce, getURLParams } from '@modyo/financial-commons';
 import MonthsSelector from './components/MonthsSelector.vue';
@@ -455,6 +455,7 @@ export default {
           decimal: '.',
           thousands: ',',
           precision: 2,
+          maxlength: this.available.toString().length + 3,
         };
       }
       return {
@@ -462,6 +463,7 @@ export default {
         decimal: ',',
         thousands: '.',
         precision: 0,
+        maxlength: this.available.toString().length + 3,
       };
     },
   },
