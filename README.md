@@ -1,5 +1,9 @@
 # consumer-loan
 
+![Build and Publish](https://github.com/modyo/modyo-widgets-retail-consumer-loan/workflows/Build%20and%20Publish/badge.svg)
+![ESLint](https://github.com/modyo/modyo-widgets-retail-consumer-loan/workflows/ESLint/badge.svg)
+![Stylelint](https://github.com/modyo/modyo-widgets-retail-consumer-loan/workflows/Stylelint/badge.svg)
+
 ## Project setup
 ```
 yarn install
