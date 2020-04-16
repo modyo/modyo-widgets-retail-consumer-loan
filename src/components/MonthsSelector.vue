@@ -111,4 +111,12 @@ export default {
     }
   }
 }
+
+@media (min-width: 992px) and (max-width: 1199.98px){
+  .consumer-loan-months-selector{
+    .btn-selector.btn-block {
+      font-size: .8rem;
+    }
+  }
+}
 </style>
