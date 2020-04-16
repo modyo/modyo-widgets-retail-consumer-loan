@@ -3,12 +3,12 @@
     id="consumer-loan"
     class="consumer-loan py-lg-5"
     :class="{'h-100': !showSettingsView}">
-    <div class="consumer-loan__container container">
+    <div class="consumer-loan__container container-lg">
       <div class="consumer-loan__row row">
         <div
           v-if="showSettingsView"
           class="col-lg-6 p-5 d-flex flex-column d-lg-block">
-          <h2 class="mb-4 text-primary">
+          <h2 class="mb-4 text-primary d-none d-lg-block">
             {{ $t('main.title') }}
           </h2>
           <div class="form-group">
@@ -18,8 +18,30 @@
               v-bind="moneyOptions"
               class="d-block form-control"
               @input="calculateLoan" />
-            <small class="d-block mt-2">{{ $t('main.minimum-credit-msg',
-                                              {amount: currency(minAmount, currencyFormat)}) }}</small>
+            <small class="d-block mt-2">
+              {{ $t('main.minimum-credit-msg', {amount: currency(minAmount, currencyFormat)}) }}
+            </small>
+            <div
+              v-if="showMaxMessage"
+              class="mt-3 bg-light px-4 py-3 d-lg-none">
+              <i18n
+                path="main.credit-amount-exceeds-msg"
+                tag="p"
+                class="text-danger mb-0">
+                <span />
+                <strong class="text-primary">{{ currency(available, currencyFormat) }}</strong>
+              </i18n>
+              <i18n
+                path="main.credit-quote-increase-request"
+                tag="p"
+                class="mt-1 mb-0">
+                <a href="#">{{ $t('main.credit-quote-increase-request-link') }}
+                  <strong class="consumer-loan__request-quota-increase-link-strong">
+                    {{ $t('main.credit-quote-increase-request-link-strong') }}
+                  </strong>
+                </a>
+              </i18n>
+            </div>
           </div>
 
           <div class="form-group">
