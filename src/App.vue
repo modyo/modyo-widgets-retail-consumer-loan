@@ -7,7 +7,7 @@
       <div class="consumer-loan__row row">
         <div
           v-if="showSettingsView"
-          class="col-lg-6 p-5 d-flex flex-column d-lg-block">
+          class="col-lg-6 p-4 p-sm-5 d-flex flex-column d-lg-block">
           <h2 class="mb-4 text-primary d-none d-lg-block">
             {{ $t('main.title') }}
           </h2>
@@ -140,12 +140,12 @@
         </div>
         <div
           v-if="activeDetailInfo || (!showMinMessage && !showMaxMessage)"
-          class="consumer-loan__summary col-lg-6 p-5 d-lg-block"
+          class="consumer-loan__summary col-lg-6 p-4 p-sm-5 d-lg-block"
           :class="{'d-none': showSettingsView}">
           <div v-if="!activeInfo">
             <h3 class="consumer-loan__simulation__title mt-1 mb-4 d-flex align-items-center text-primary">
               <button
-                class="d-inline-block d-sm-none btn btn-link pl-0 ml-n3"
+                class="d-inline-block d-lg-none btn btn-link pl-0"
                 @click="activeDetailInfo=false; showSettingsView=true;">
                 <font-awesome-icon icon="arrow-left" />
               </button>
@@ -334,7 +334,8 @@
         </div>
         <div
           v-else-if="showMaxMessage"
-          class="col-lg-6 bg-tertiary-20 p-5 d-none d-lg-flex flex-column justify-content-center align-items-center">
+          class="col-lg-6 bg-tertiary-20 p-4 p-sm-5 d-none d-lg-flex flex-column
+          justify-content-center align-items-center">
           <h3 class="text-center">
             <font-awesome-icon
               icon="ban"
