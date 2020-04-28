@@ -13,10 +13,10 @@
             :key="option.label"
             class="col-4 col-md-3 mb-1 p-1">
             <button
-              :class="{ active: option.selected }"
+              :class="{ active: option.selected, 'btn-light': !option.selected }"
               :disabled="isDisabled && !option.selected"
               type="button"
-              class="btn btn-light btn-selector btn-block"
+              class="btn  btn-selector btn-block"
               @click="toogleSelection(option)">
               {{ option.label }}
             </button>
@@ -98,7 +98,7 @@ export default {
     &.active {
       color: #fff;
 
-      background: $primary;
+      background: $primary-100;
     }
   }
 
