@@ -53,7 +53,7 @@
     "simulate": "Simular",
     "simulation-summary": {
       "credit-total-cost": "Costo total del crédito",
-      "fee-value": "valor cuota",
+      "fee-value": "Valor cuota",
       "fees": "Cuotas",
       "interest-rate": "Tasa Interés",
       "monthly": "Mensual",
@@ -62,7 +62,8 @@
       "title": "Resumen de Simulación",
       "total-tax": "Tasa total",
       "view-detail-btn": "Ver Detalle",
-      "yearly": "Anual"
+      "yearly": "Anual",
+      "to-account": "Cuenta Destino"
     },
     "summary": {
       "annual": "anual",

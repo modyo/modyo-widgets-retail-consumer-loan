@@ -62,7 +62,8 @@
       "title": "Simulate Personal Loan",
       "total-tax": "Total Tax",
       "view-detail-btn": "View Details",
-      "yearly": "Annually"
+      "yearly": "Annually",
+      "to-account": "Destination account"
     },
     "summary": {
       "annual": "annual",

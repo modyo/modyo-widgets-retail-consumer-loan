@@ -45,6 +45,29 @@
           </div>
 
           <div class="form-group">
+            <label for="">{{ $t('main.deposit-to-account') }}:</label>
+            <multiselect
+              v-model="account"
+              :show-no-results="false"
+              :show-labels="false"
+              :searchable="false"
+              :options="accounts"
+              :custom-label="accountLabel"
+              :allow-empty="false"
+              track-by="id"
+              label="accountType"
+              :placeholder="$t('main.select-to-account')">
+              <template
+                slot="option"
+                slot-scope="props">
+                <span class="text-capitalize">{{ props.option.accountType }} -
+                  <small>{{ props.option.accountNumber }}</small>
+                </span>
+              </template>
+            </multiselect>
+          </div>
+
+          <div class="form-group">
             <label for="">{{ $t('main.fees') }}</label>
             <vue-slider
               v-model.number="payments"
@@ -80,28 +103,6 @@
                 {{ $t('main.select-month-of-no-payment',{max:maxMonthsNoPayment}) }}
               </div>
             </months-selector>
-          </div>
-
-          <div class="form-group">
-            <label for="">{{ $t('main.deposit-to-account') }}:</label>
-            <multiselect
-              v-model="account"
-              :show-no-results="false"
-              :show-labels="false"
-              :searchable="false"
-              :options="accounts"
-              :custom-label="accountLabel"
-              track-by="id"
-              label="accountType"
-              :placeholder="$t('main.select-to-account')">
-              <template
-                slot="option"
-                slot-scope="props">
-                <span class="text-capitalize">{{ props.option.accountType }}
-                  <small>{{ props.option.accountNumber }}</small>
-                </span>
-              </template>
-            </multiselect>
           </div>
 
           <div class="mb-4">
@@ -149,7 +150,7 @@
           </div>
         </div>
         <div
-          v-if="activeDetailInfo || (!showMinMessage && !showMaxMessage)"
+          v-if="activeDetailInfo || (!showMinMessage && !showMaxMessage && account)"
           class="consumer-loan__summary col-lg-6 p-4 p-sm-5 d-lg-block"
           :class="{'d-none': showSettingsView}">
           <div v-if="!activeInfo">
@@ -172,7 +173,7 @@
             </div>
 
             <div
-              class="consumer-loan__sumary-fees-container p-4 my-5 my-lg-4 d-flex justify-content-between">
+              class="consumer-loan__sumary-fees-container p-4 my-5 my-lg-4 d-flex justify-content-between rounded">
               <div
                 v-if="payments > 1"
                 class="consumer-loan__sumary-fees-qtty p-2 p-lg-3 d-flex flex-column align-items-center">
@@ -275,6 +276,20 @@
                   <strong>{{ amount | currency(currencyFormat) }}</strong>
                 </div>
                 <div class="d-flex justify-content-between mb-2">
+                  <strong>{{ $t('main.simulation-summary.fees') }}</strong>
+                  <span>{{ payments }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <strong>{{ $t('main.simulation-summary.fee-value') }}</strong>
+                  <span>{{ monthlyAmount | currency(currencyFormat) }}</span>
+                </div>
+              </div>
+              <div class="bg-white px-3 pt-3 pb-2 rounded mt-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.months-of-grace') }}</span>
+                  <span>{{ monthGrace }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
                   <span>{{ $t('main.summary.interest-rate') }}</span>
                   <span>{{ interestRate }}% {{ $t('main.summary.monthly') }}</span>
                 </div>
@@ -286,12 +301,14 @@
                   <span>{{ $t('main.summary.equivalent-anual-load-abbr') }}</span>
                   <span>{{ cae }}%</span>
                 </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.simulation-summary.to-account') }}</span>
+                  <span class="text-capitalize text-right ">{{ account.accountType }}<br>
+                    <strong>{{ account.accountNumber }}</strong>
+                  </span>
+                </div>
               </div>
               <div class="bg-white px-3 pt-3 pb-2 rounded mt-3">
-                <div class="d-flex justify-content-between mb-2">
-                  <span>{{ $t('main.summary.months-of-grace') }}</span>
-                  <span>{{ monthGrace }}</span>
-                </div>
                 <div
                   v-if="disgrace"
                   class="d-flex justify-content-between mb-2">
@@ -518,7 +535,7 @@ export default {
   methods: {
     currency,
     accountLabel(account) {
-      return `${account.accountType} ${account.accountNumber}`;
+      return `${account.accountType} - ${account.accountNumber}`;
     },
     calculateLoan: debounce(function getLoans() {
       const payload = {
