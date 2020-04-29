@@ -106,29 +106,31 @@
 
           <div class="mb-4">
             <label>{{ $t('main.insurances') }}</label>
-            <div class="d-flex d-lg-flex flex-column flex-lg-row mt-2">
-              <div class="checkbox-pill mb-2 mb-lg-0 d-lg-flex">
+            <div
+              class="d-flex flex-column flex-sm-row flex-lg-column flex-xl-row
+              flex-fill mt-2 justify-content-start">
+              <div class="checkbox-pill mb-2 mx-1">
                 <input
                   v-model="disgrace"
                   :disabled="isRangeDisabled"
                   type="checkbox"
                   @input="calculateLoan">
                 <span class="checkbox-icon" />
-                <label class="d-block d-lg-flex align-items-center justify-content-center">
+                <label class="d-flex align-items-center flex-fill  justify-content-between">
                   {{ $t('main.disencumbrance') }}
                   <font-awesome-icon
                     icon="check" />
                 </label>
               </div>
 
-              <div class="checkbox-pill ml-lg-2 mb-2 mb-lg-0 d-lg-flex">
+              <div class="checkbox-pill mb-2 mx-1">
                 <input
                   v-model="unemployment"
                   :disabled="isRangeDisabled"
                   type="checkbox"
                   @input="calculateLoan">
                 <span class="checkbox-icon" />
-                <label class="d-block d-lg-flex align-items-center justify-content-center">
+                <label class="d-flex align-items-center flex-fill  justify-content-between">
                   {{ $t('main.unemployment') }}
                   <font-awesome-icon
                     icon="check" />

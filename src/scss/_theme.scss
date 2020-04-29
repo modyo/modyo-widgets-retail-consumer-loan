@@ -127,7 +127,8 @@ p {
       }
     }
 
-    &:hover ~ label {
+    &:hover ~ label,
+    &:focus ~ label {
       color: #212529;
 
       background-color: #dbdddf;
@@ -169,26 +170,6 @@ p {
   .multiselect .multiselect__single,
   .multiselect .multiselect__input {
     font-size: .8rem;
-  }
-
-  .checkbox-pill {
-    input {
-      &:checked ~ label {
-        background-color: $secondary;
-      }
-
-      &:disabled ~ label {
-        background-color: $primary-10;
-      }
-
-      &:hover ~ label {
-        background-color: $secondary-20;
-      }
-
-      &:checked:hover ~ label {
-        background-color: $secondary;
-      }
-    }
   }
 }
 
