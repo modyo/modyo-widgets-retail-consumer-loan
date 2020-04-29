@@ -267,46 +267,51 @@
                 icon="chevron-left"
                 class="mr-2" /> {{ $t('main.summary.view-summary-btn') }}
             </button>
-            <div class="mt-4 mb-5 my-lg-4">
-              <div class="d-flex justify-content-between mb-2">
-                <strong>{{ $t('main.summary.credit-total-amount') }}</strong>
-                <strong>{{ amount | currency(currencyFormat) }}</strong>
+
+            <div class="mb-5 mt-lg-0 mb-lg-4">
+              <div class="bg-white px-3 pt-3 pb-2 rounded">
+                <div class="d-flex justify-content-between mb-2">
+                  <strong>{{ $t('main.summary.credit-total-amount') }}</strong>
+                  <strong>{{ amount | currency(currencyFormat) }}</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.interest-rate') }}</span>
+                  <span>{{ interestRate }}% {{ $t('main.summary.monthly') }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.annual-interest') }}</span>
+                  <span>{{ annualRate }}% {{ $t('main.summary.annual') }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.equivalent-anual-load-abbr') }}</span>
+                  <span>{{ cae }}%</span>
+                </div>
               </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.stamps-tax') }}</span>
-                <span>{{ stampTax | currency(currencyFormat) }}</span>
-              </div>
-              <div
-                v-if="disgrace"
-                class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.disgrace-insurance') }}</span>
-                <span>{{ disgraceInsurance | currency(currencyFormat) }}</span>
-              </div>
-              <div
-                v-if="unemployment"
-                class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.unemployment-insurance') }}</span>
-                <span>{{ unemploymentInsurance | currency(currencyFormat) }}</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.notarial-fees') }}</span>
-                <span>{{ notaryFee | currency(currencyFormat) }}</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.months-of-grace') }}</span>
-                <span>{{ monthGrace }}</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.interest-rate') }}</span>
-                <span>{{ interestRate }}% {{ $t('main.summary.monthly') }}</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.annual-interest') }}</span>
-                <span>{{ annualRate }}% {{ $t('main.summary.annual') }}</span>
-              </div>
-              <div class="d-flex justify-content-between mb-2">
-                <span>{{ $t('main.summary.equivalent-anual-load-abbr') }}</span>
-                <span>{{ cae }}%</span>
+              <div class="bg-white px-3 pt-3 pb-2 rounded mt-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.months-of-grace') }}</span>
+                  <span>{{ monthGrace }}</span>
+                </div>
+                <div
+                  v-if="disgrace"
+                  class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.disgrace-insurance') }}</span>
+                  <span>{{ disgraceInsurance | currency(currencyFormat) }}</span>
+                </div>
+                <div
+                  v-if="unemployment"
+                  class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.unemployment-insurance') }}</span>
+                  <span>{{ unemploymentInsurance | currency(currencyFormat) }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.stamps-tax') }}</span>
+                  <span>{{ stampTax | currency(currencyFormat) }}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>{{ $t('main.summary.notarial-fees') }}</span>
+                  <span>{{ notaryFee | currency(currencyFormat) }}</span>
+                </div>
               </div>
               <div class="row mt-4">
                 <div class="col-12 col-lg-6 text-center text-lg-left">
