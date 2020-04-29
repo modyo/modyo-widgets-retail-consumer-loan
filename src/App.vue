@@ -8,7 +8,7 @@
         <div
           v-if="showSettingsView"
           class="col-lg-6 p-4 p-sm-5 d-flex flex-column d-lg-block">
-          <h2 class="mb-4 text-primary d-none d-lg-block">
+          <h2 class="h5 mb-4 text-primary">
             {{ $t('main.title') }}
           </h2>
           <div class="form-group">
@@ -104,31 +104,39 @@
             </multiselect>
           </div>
 
-          <div class="form-group">
-            <label for="">{{ $t('main.insurances') }}</label>
-            <div class="d-flex">
-              <div class="form-check form-check-inline">
+          <div class="mb-4">
+            <label>{{ $t('main.insurances') }}</label>
+            <div class="d-flex d-lg-flex flex-column flex-lg-row mt-2">
+              <div class="checkbox-pill mb-2 mb-lg-0 d-lg-flex">
                 <input
                   v-model="disgrace"
                   :disabled="isRangeDisabled"
                   type="checkbox"
-                  class="form-check-input"
                   @input="calculateLoan">
-                <label class="form-check-label">{{ $t('main.disencumbrance') }}</label>
+                <span class="checkbox-icon" />
+                <label class="d-block d-lg-flex align-items-center justify-content-center">
+                  {{ $t('main.disencumbrance') }}
+                  <font-awesome-icon
+                    icon="check" />
+                </label>
               </div>
-              <div class="form-check form-check-inline">
+
+              <div class="checkbox-pill ml-lg-2 mb-2 mb-lg-0 d-lg-flex">
                 <input
                   v-model="unemployment"
                   :disabled="isRangeDisabled"
                   type="checkbox"
-                  class="form-check-input"
                   @input="calculateLoan">
-                <label class="form-check-label">
+                <span class="checkbox-icon" />
+                <label class="d-block d-lg-flex align-items-center justify-content-center">
                   {{ $t('main.unemployment') }}
+                  <font-awesome-icon
+                    icon="check" />
                 </label>
               </div>
             </div>
           </div>
+
           <div class="form-group d-lg-none">
             <button
               :disabled="showMinMessage || showMaxMessage"
@@ -143,14 +151,14 @@
           class="consumer-loan__summary col-lg-6 p-4 p-sm-5 d-lg-block"
           :class="{'d-none': showSettingsView}">
           <div v-if="!activeInfo">
-            <h3 class="consumer-loan__simulation__title mt-1 mb-4 d-flex align-items-center text-primary">
+            <p class="h5 consumer-loan__simulation__title mb-4 d-flex align-items-center text-primary">
               <button
                 class="d-inline-block d-lg-none btn btn-link pl-0"
                 @click="activeDetailInfo=false; showSettingsView=true;">
                 <font-awesome-icon icon="arrow-left" />
               </button>
               {{ $t('main.simulation-summary.title') }}
-            </h3>
+            </p>
 
             <div class="d-flex justify-content-between">
               <p class="mb-0">
@@ -324,7 +332,7 @@
             <span class="consumer-loan__initial-msg-icon"><font-awesome-icon icon="arrow-circle-left" /></span>
             <i18n
               path="main.credit-minimum-amount-insert-msg"
-              tag="h3"
+              tag="h4"
               class="font-weight-light">
               <strong class="text-primary font-weight-bold">
                 {{ $t('main.credit-minimum-amount-insert-msg-strong') }}
@@ -572,10 +580,11 @@ export default {
 
   align-items: center;
 
-  margin-top: -30px;
-  margin-left: -30px;
+  margin-top: -24px;
+  margin-left: -24px;
 
-  font-size: 60px;
+  font-size: 48px;
+  color: $primary-100;
 
   background-color: #fff;
   border-radius: 50%;
@@ -607,10 +616,6 @@ export default {
 @media (max-width: 991.98px){
   .consumer-loan {
     background-color: #fff;
-  }
-
-  .consumer-loan__simulation__title {
-    font-size: 1.5rem;
   }
 }
 
