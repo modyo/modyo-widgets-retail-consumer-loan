@@ -510,7 +510,7 @@ export default {
           decimal: '.',
           thousands: ',',
           precision: 2,
-          maxlength: this.available.toString().length + 3,
+          maxlength: this.amountMaxLength + 3,
         };
       }
       return {
@@ -518,8 +518,16 @@ export default {
         decimal: ',',
         thousands: '.',
         precision: 0,
-        maxlength: this.available.toString().length + 3,
+        maxlength: this.amountMaxLength,
       };
+    },
+    amountMaxLength() {
+      if (this.available) {
+        const availableBalanceLength = Math.round(parseFloat(this.available)).toString().length;
+        const dots = Math.round(availableBalanceLength / 3); // each thousands is a dot
+        return availableBalanceLength + dots;
+      }
+      return 9;
     },
   },
   watch: {
