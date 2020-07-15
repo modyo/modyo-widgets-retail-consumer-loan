@@ -421,9 +421,25 @@ export default {
       activeDetailInfo: false,
       amount: 0,
       payments: 6,
-      paymentSteps: [1, 6, 12, 18, 24, 30, 36],
+      paymentSteps: [
+        1,
+        6,
+        12,
+        18,
+        24,
+        30,
+        36,
+      ],
       monthGrace: 0,
-      monthGraceSteps: [0, 1, 2, 3, 4, 5, 6],
+      monthGraceSteps: [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+      ],
       monthsNoPayment: '',
       disgrace: true,
       unemployment: true,
@@ -564,14 +580,13 @@ export default {
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
-
 <style lang="scss">
 .multiselect .multiselect__placeholder,
 .multiselect .multiselect__single,
 .multiselect .multiselect__input {
   text-transform: capitalize;
 }
-@media (max-width: 575.98px){
+@media (max-width: 575.98px) {
   .multiselect .multiselect__placeholder,
   .multiselect .multiselect__single,
   .multiselect .multiselect__input {
@@ -645,13 +660,13 @@ export default {
   text-decoration: underline;
 }
 
-@media (max-width: 991.98px){
+@media (max-width: 991.98px) {
   .consumer-loan {
     background-color: #fff;
   }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .consumer-loan__summary {
     background-color: $tertiary-20;
   }

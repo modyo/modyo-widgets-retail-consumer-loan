@@ -80,7 +80,7 @@ export default {
 <style lang="scss">
 @import "../scss/variables.scss";
 
-.consumer-loan-months-selector{
+.consumer-loan-months-selector {
   .card {
     border: 1px solid $primary-10;
   }
@@ -104,16 +104,16 @@ export default {
 
 }
 
-@media (min-width: 576px){
-  .consumer-loan-months-selector{
+@media (min-width: 576px) {
+  .consumer-loan-months-selector {
     .btn-selector.btn-block {
       font-size: 1rem;
     }
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px){
-  .consumer-loan-months-selector{
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .consumer-loan-months-selector {
     .btn-selector.btn-block {
       font-size: .8rem;
     }

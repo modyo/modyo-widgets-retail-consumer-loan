@@ -9,5 +9,4 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faArrowLeft, faChevronRight, faChevronLeft, faArrowCircleLeft, faBan, faCheck);
 
-
 Vue.component('font-awesome-icon', FontAwesomeIcon);
