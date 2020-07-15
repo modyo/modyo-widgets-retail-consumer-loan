@@ -54,7 +54,7 @@
     "simulation-summary": {
       "credit-total-cost": "Total loan cost",
       "fee-value": "Monthly payment",
-      "fees": "payments",
+      "fees": "Payments",
       "interest-rate": "Interest rate",
       "monthly": "Monthly",
       "no-fees": "{0} non-payments",
