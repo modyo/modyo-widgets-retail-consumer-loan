@@ -135,7 +135,7 @@ p {
     }
 
     &:disabled ~ label,
-    &:disabled:hover ~ label  {
+    &:disabled:hover ~ label {
       color: $primary-40;
 
       background-color: $primary-10;
@@ -165,7 +165,7 @@ p {
   }
 }
 
-@media (max-width: 575.98px){
+@media (max-width: 575.98px) {
   .multiselect .multiselect__placeholder,
   .multiselect .multiselect__single,
   .multiselect .multiselect__input {

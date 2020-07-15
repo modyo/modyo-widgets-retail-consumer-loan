@@ -1,33 +1,46 @@
-# consumer-loan
+# Project Title
 
-![Build and Publish](https://github.com/modyo/modyo-widgets-retail-consumer-loan/workflows/Build%20and%20Publish/badge.svg)
-![ESLint](https://github.com/modyo/modyo-widgets-retail-consumer-loan/workflows/ESLint/badge.svg)
-![Stylelint](https://github.com/modyo/modyo-widgets-retail-consumer-loan/workflows/Stylelint/badge.svg)
+## Table of Contents
 
-## Project setup
-```
-yarn install
-```
++ [About](#about)
++ [Getting Started](#getting_started)
++ [Usage](#usage)
++ [Contributing](../CONTRIBUTING.md)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## About <a name = "about"></a>
 
-### Compiles and minifies for production
-```
-yarn build
-```
+Write about 1-2 paragraphs describing the purpose of your project.
 
-### Run your unit tests
-```
-yarn test:unit
-```
+## Getting Started <a name = "getting_started"></a>
 
-### Lints and fixes files
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+What things you need to install the software and how to install them.
+
 ```
-yarn lint
+Give examples
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Installing
+
+A step by step series of examples that tell you how to get a development env running.
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo.
+
+## Usage <a name = "usage"></a>
+
+All the js inside repositories is optional and provide basic usage of repository pattern in Vue to handle external resources consumptions.
