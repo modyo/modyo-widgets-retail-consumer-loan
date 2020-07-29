@@ -297,7 +297,9 @@
                   <span>{{ $t('main.summary.annual-interest') }}</span>
                   <span>{{ annualRate }}% {{ $t('main.summary.annual') }}</span>
                 </div>
-                <div class="d-flex justify-content-between mb-2">
+                <div
+                  v-if="!isLangEn"
+                  class="d-flex justify-content-between mb-2">
                   <span>{{ $t('main.summary.equivalent-anual-load-abbr') }}</span>
                   <span>{{ cae }}%</span>
                 </div>
