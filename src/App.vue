@@ -507,7 +507,7 @@ export default {
       return (this.amount < this.minAmount);
     },
     isLangEn() {
-      return this.$store.state.lang === 'en-US';
+      return this.$i18n.locale === 'en-US';
     },
     minAmount() {
       if (this.isLangEn) {
