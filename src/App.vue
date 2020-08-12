@@ -68,8 +68,11 @@
           </div>
 
           <div class="form-group">
-            <label for="">{{ $t('main.fees') }}</label>
+            <label
+              id="payments-lbl"
+              for="payments">{{ $t('main.fees') }}</label>
             <vue-slider
+              id="payments"
               v-model.number="payments"
               class="mb-5"
               :disabled="isRangeDisabled"
@@ -82,8 +85,11 @@
           </div>
 
           <div class="form-group">
-            <label for="">{{ $t('main.months-of-grace') }}</label>
+            <label
+              id="monthGrace-lbl"
+              for="monthGrace">{{ $t('main.months-of-grace') }}</label>
             <vue-slider
+              id="monthGrace"
               v-model.number="monthGrace"
               class="mb-5"
               :disabled="isRangeDisabled"
