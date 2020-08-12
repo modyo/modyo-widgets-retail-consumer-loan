@@ -12,8 +12,9 @@
             {{ $t('main.title') }}
           </h2>
           <div class="form-group">
-            <label for="">{{ $t('main.credit-amount') }}</label>
+            <label for="amount">{{ $t('main.credit-amount') }}</label>
             <money
+              id="amount"
               v-model="amount"
               v-bind="moneyOptions"
               class="d-block form-control"
@@ -118,12 +119,15 @@
               flex-fill mt-2 justify-content-start">
               <div class="checkbox-pill mb-2 mx-1">
                 <input
+                  id="disgrace"
                   v-model="disgrace"
                   :disabled="isRangeDisabled"
                   type="checkbox"
                   @input="calculateLoan">
                 <span class="checkbox-icon" />
-                <label class="d-flex align-items-center flex-fill  justify-content-between">
+                <label
+                  for="disgrace"
+                  class="d-flex align-items-center flex-fill  justify-content-between">
                   {{ $t('main.disencumbrance') }}
                   <font-awesome-icon
                     icon="check" />
@@ -132,12 +136,15 @@
 
               <div class="checkbox-pill mb-2 mx-1">
                 <input
+                  id="unemployment"
                   v-model="unemployment"
                   :disabled="isRangeDisabled"
                   type="checkbox"
                   @input="calculateLoan">
                 <span class="checkbox-icon" />
-                <label class="d-flex align-items-center flex-fill  justify-content-between">
+                <label
+                  for="unemployment"
+                  class="d-flex align-items-center flex-fill  justify-content-between">
                   {{ $t('main.unemployment') }}
                   <font-awesome-icon
                     icon="check" />
