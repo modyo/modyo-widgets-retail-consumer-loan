@@ -80,6 +80,7 @@
               :marks="paymentSteps"
               :min="1"
               :max="36"
+              :dot-attrs="{ 'aria-label': $t('main.fees') }"
               tooltip="always"
               tooltip-placement="bottom"
               @change="calculateLoan" />
@@ -97,6 +98,7 @@
               :marks="monthGraceSteps"
               :min="0"
               :max="6"
+              :dot-attrs="{ 'aria-label': $t('main.months-of-grace') }"
               tooltip="always"
               tooltip-placement="bottom"
               @change="calculateLoan" />
@@ -371,8 +373,8 @@
             <span class="consumer-loan__initial-msg-icon"><font-awesome-icon icon="arrow-circle-left" /></span>
             <i18n
               path="main.credit-minimum-amount-insert-msg"
-              tag="h4"
-              class="font-weight-light">
+              tag="h3"
+              class="font-weight-light h4">
               <strong class="text-primary font-weight-bold">
                 {{ $t('main.credit-minimum-amount-insert-msg-strong') }}
               </strong>
