@@ -14,4 +14,14 @@ export default {
   monthlyRate: '',
   disgraceInsurance: '',
   unemploymentInsurance: '',
+
+  // new items
+  showSettingsView: true,
+  amount: 0,
+  monthsGrace: 0,
+  account: null,
+  payments: 6,
+  disgrace: true,
+  unemployment: true,
+  showSimulationDetails: false,
 };

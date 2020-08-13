@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../scss/variables.scss";
+@import "../../scss/variables.scss";
 
 .consumer-loan-months-selector {
   .card {
