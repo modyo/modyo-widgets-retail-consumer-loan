@@ -4,43 +4,11 @@ body {
   height: 100%;
 }
 
-body {
-  background: $primary-80;
-}
+/******************
+EXTEND BOOTSTRAP
+*******************/
 
-// Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
-  body {
-    font-size: .875rem;
-  }
-}
-
-p {
-  color: $primary-80;
-}
-
-.icon-centered {
-  position: absolute;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  &.right-3 {
-    right: 1 * $spacer;
-  }
-
-  &.right-4 {
-    right: 1 .5 * $spacer;
-  }
-
-  &.left-3 {
-    left: 1 * $spacer;
-  }
-
-  &.left-4 {
-    left: 1.5 * $spacer;
-  }
-}
+@include bg-variant(".bg-tertiary-20", $tertiary-20, true);
 
 .btn-primary {
   &:disabled {
@@ -50,57 +18,10 @@ p {
   }
 }
 
-.btn-white {
-  color: $primary;
-
-  background-color: #fff;
-  border-color: $primary-60;
-
-  &:hover,
-  &:focus {
-    background-color: #fcfcfc;
-  }
-}
-
-.text-tertiary {
-  color: $tertiary-100;
-}
-
-.bg-tertiary-20 {
-  background-color: $tertiary-20;
-}
-
-.btn-primary-dark {
-  color: #fff;
-
-  background-color: $primary;
-
-  &:focus,
-  &:hover {
-    color: #fff;
-
-    background-color: $primary-dark;
-  }
-
-  &:disabled {
-    color: #fff;
-
-    background-color: $primary-20;
-    opacity: 1;
-  }
-}
-
 .multiselect .multiselect__placeholder,
 .multiselect .multiselect__single,
 .multiselect .multiselect__input {
   text-transform: capitalize;
-}
-@media (max-width: 575.98px) {
-  .multiselect .multiselect__placeholder,
-  .multiselect .multiselect__single,
-  .multiselect .multiselect__input {
-    font-size: .8rem;
-  }
 }
 
 .multiselect .multiselect__option--highlight {
@@ -178,17 +99,26 @@ p {
   }
 }
 
-@media (max-width: 575.98px) {
+/******************
+VUE SLIDER VARIABLES
+*******************/
+
+/* Set the theme color of the component */
+$themeColor: #2e4553; /* stylelint-disable-line scss/dollar-variable-pattern */
+@import "~vue-slider-component/lib/theme/default.scss";
+
+/******************
+MEDIA QUERIES
+*******************/
+
+@include media-breakpoint-down(xs) {
+  body {
+    font-size: .875rem;
+  }
+
   .multiselect .multiselect__placeholder,
   .multiselect .multiselect__single,
   .multiselect .multiselect__input {
     font-size: .8rem;
   }
 }
-
-// VUE SLIDER VARIABLES
-
-/* Set the theme color of the component */
-$themeColor: #2e4553; /* stylelint-disable-line scss/dollar-variable-pattern */
-
-@import "~vue-slider-component/lib/theme/default.scss";
