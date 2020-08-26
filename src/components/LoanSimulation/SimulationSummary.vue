@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <p class="consumer-loan__simulation__title h5 mb-4 d-flex align-items-center text-primary">
       <button

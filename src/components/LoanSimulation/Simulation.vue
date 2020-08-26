@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div
     class="consumer-loan__summary p-4 p-sm-5 d-lg-block"
     :class="{'d-none': showSettingsView}">

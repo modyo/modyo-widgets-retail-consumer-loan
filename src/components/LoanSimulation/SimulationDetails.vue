@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <button
       class="btn btn-link mb-3 pl-0"

@@ -1,4 +1,4 @@
-﻿const LANG = window.liquid ? window.liquid.lang : 'es-CL';
+const LANG = window.liquid ? window.liquid.lang : 'es-CL';
 
 const isLangEn = () => LANG === 'en-US';
 

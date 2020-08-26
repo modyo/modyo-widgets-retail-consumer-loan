@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div
     v-if="showSettingsView"
     class="p-4 p-sm-5 d-flex flex-column d-lg-block">

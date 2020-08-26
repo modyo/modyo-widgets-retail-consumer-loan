@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div
     class="bg-tertiary-20 p-4 p-sm-5 d-none d-lg-flex flex-column
     justify-content-center align-items-center">
