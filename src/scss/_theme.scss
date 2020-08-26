@@ -90,6 +90,19 @@ p {
   }
 }
 
+.multiselect .multiselect__placeholder,
+.multiselect .multiselect__single,
+.multiselect .multiselect__input {
+  text-transform: capitalize;
+}
+@media (max-width: 575.98px) {
+  .multiselect .multiselect__placeholder,
+  .multiselect .multiselect__single,
+  .multiselect .multiselect__input {
+    font-size: .8rem;
+  }
+}
+
 .multiselect .multiselect__option--highlight {
   background-color: $primary-100;
 }
