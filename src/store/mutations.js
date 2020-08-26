@@ -3,8 +3,44 @@ export default {
     state.paramClientId = data;
   },
 
+  SET_AMOUNT(state, value) {
+    state.amount = value;
+  },
+
+  SET_ACCOUNT(state, value) {
+    state.account = value;
+  },
+
+  SET_PAYMENTS(state, value) {
+    state.payments = value;
+  },
+
+  SET_MONTHS_GRACE(state, value) {
+    state.monthsGrace = value;
+  },
+
+  SET_DISGRACE(state, value) {
+    state.disgrace = value;
+  },
+
+  SET_UNEMPLOYMENT(state, value) {
+    state.unemployment = value;
+  },
+
   SET_ACCOUNTS(state, data) {
     state.accounts = data;
+  },
+
+  SET_SHOW_SETTINGS_VIEW(state, value) {
+    state.showSettingsView = value;
+  },
+
+  SET_SHOW_SIMULATION_DETAILS(state, value) {
+    state.showSimulationDetails = value;
+  },
+
+  SET_ACTIVE_DETAIL_INFO(state, value) {
+    state.activeDetailInfo = value;
   },
 
   SET_INTEREST_RATE(state, data) {
