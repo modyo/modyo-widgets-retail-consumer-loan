@@ -146,7 +146,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../../scss/variables.scss";
+@import "../../scss/variables";
 
 .consumer-loan__simulator-details-total-credit-cost {
   font-weight: bolder;

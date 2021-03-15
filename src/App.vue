@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./scss/variables.scss";
+@import "./scss/variables";
 
 .consumer-loan__container {
   background-color: #fff;
