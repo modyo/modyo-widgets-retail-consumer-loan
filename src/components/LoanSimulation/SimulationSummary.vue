@@ -162,7 +162,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../../scss/variables.scss";
+@import "../../scss/variables";
 
 .consumer-loan__sumary-fees-container {
   background-color: $tertiary-20;
