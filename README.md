@@ -1,4 +1,4 @@
-# Project Title
+# Personal Loan Widget
 
 ## Table of Contents
 
@@ -7,40 +7,89 @@
 + [Usage](#usage)
 + [Contributing](../CONTRIBUTING.md)
 
-## About <a name = "about"></a>
+## About <a name="about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Modyo also offers a widget that allows customers to simulate and apply for a personal loan with the information and terms they need
 
-## Getting Started <a name = "getting_started"></a>
+| Functionality         | Description                                                                          |
+|:----------------------|:-------------------------------------------------------------------------------------|
+| Loan Amount           | The loan amount to be requested from to the institution.                             |
+| Payments              | Shows the total payment amounts for the requested personal loan.                     |
+| Months of non-payment | This section allows customers to select the months of their grace period.            |
+| Grace period          | If necessary, customers can select non-payment dates for their personal loan.        |
+| Destination account   | Corresponds to the account in which the requested loan amount will be deposited.     |
+| Insurance             | Shows different types of insurance that clients can add to their loans if necessary. |
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+## Getting Started <a name="getting_started"></a>
+
+These instructions will get you a copy of the Widget up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on Modyo.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+This project requires NodeJS (version LTS or later) and NPM or YARN.
+[Node](http://nodejs.org/), [NPM](https://npmjs.org/) and [YARN](https://yarnpkg.com/) are really easy to install. To make sure you have them available on your machine, try running the following command.
 
+```sh
+node -v
+npm -v
+yarn -v
 ```
-Give examples
+
+Also you will need the [Modyo CLI](https://docs.modyo.com/platform/channels/widgets.html#modyo-cli) tool installed globally on your local machine.
+
+```sh
+npm i -g @modyo/cli #via npm
+yarn global add @modyo/cli #via yarn
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+**BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites) above.
 
-Say what the step will be
+To install a copy of this Widget on your local machine:
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```sh
+modyo-cli get modyo-widgets-retail-consumer-loan [DIRECTORY]
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+This command will clone the Widget and install it's dependencies.
 
-## Usage <a name = "usage"></a>
+## Usage
 
-All the js inside repositories is optional and provide basic usage of repository pattern in Vue to handle external resources consumptions.
+### Serving the Widget
+
+```sh
+npm run serve
+```
+
+### Running the tests and linters
+
+```sh
+npm run test:unit
+npm run lint
+npm run lint:styles
+```
+
+### Get a I18N report to check for missing translations or status
+
+```sh
+npm run i18n:report
+```
+
+### Building a distribution version
+
+```sh
+npm run build
+```
+
+This task will create a distribution version of the Widget inside your local `dist/` folder
+
+### Serving the distribution version
+
+```sh
+npm run serve --prod
+```
+
+## License
+
+SEE LICENSE IN [LICENSE.md](/LICENSE.md)
