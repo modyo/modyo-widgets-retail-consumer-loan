@@ -5,11 +5,13 @@
 + [About](#about)
 + [Getting Started](#getting_started)
 + [Usage](#usage)
-+ [Contributing](../CONTRIBUTING.md)
++ [Add Ons](#add_ons)
++ [Contributing](#contributing)
++ [Licence](#license)
 
 ## About <a name="about"></a>
 
-Modyo also offers a widget that allows customers to simulate and apply for a personal loan with the information and terms they need
+Widget that allows customers to simulate and apply for a personal loan with the information and terms they need
 
 | Functionality         | Description                                                                          |
 |:----------------------|:-------------------------------------------------------------------------------------|
@@ -20,13 +22,13 @@ Modyo also offers a widget that allows customers to simulate and apply for a per
 | Destination account   | Corresponds to the account in which the requested loan amount will be deposited.     |
 | Insurance             | Shows different types of insurance that clients can add to their loans if necessary. |
 
-## Getting Started <a name="getting_started"></a>
+## Getting Started
 
 These instructions will get you a copy of the Widget up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on Modyo.
 
-### Prerequisites
+### Development Setup
 
-This project requires NodeJS (version LTS or later) and NPM or YARN.
+This project requires NodeJS (version LTS or later), NPM and YARN.
 [Node](http://nodejs.org/), [NPM](https://npmjs.org/) and [YARN](https://yarnpkg.com/) are really easy to install. To make sure you have them available on your machine, try running the following command.
 
 ```sh
@@ -44,7 +46,7 @@ yarn global add @modyo/cli #via yarn
 
 ### Installing
 
-**BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites) above.
+**BEFORE YOU INSTALL:** please read the **Development Setup** above.
 
 To install a copy of this Widget on your local machine:
 
@@ -59,37 +61,36 @@ This command will clone the Widget and install it's dependencies.
 ### Serving the Widget
 
 ```sh
-npm run serve
+yarn serve
 ```
 
 ### Running the tests and linters
 
 ```sh
-npm run test:unit
-npm run lint
-npm run lint:styles
+yarn test:unit
+yarn lint
+yarn lint:styles
 ```
 
 ### Get a I18N report to check for missing translations or status
 
 ```sh
-npm run i18n:report
+yarn i18n:report
 ```
 
-### Building a distribution version
+### To create a production build
 
 ```sh
-npm run build
+yarn build
 ```
 
 This task will create a distribution version of the Widget inside your local `dist/` folder
 
-### Serving the distribution version
+### Serving a production version
 
 ```sh
-npm run serve --prod
+yarn serve --mode=production
 ```
-
 ## License
 
 SEE LICENSE IN [LICENSE.md](/LICENSE.md)
