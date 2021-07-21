@@ -4,7 +4,35 @@
     class="consumer-loan py-lg-5"
     :class="{'h-100': !showSettingsView}">
     <div class="consumer-loan__container container-lg">
-      <div class="consumer-loan__row row">
+      <m-response-control
+        v-if="apiStatus"
+        class="container-lg text-center py-5"
+        :status="apiStatus">
+        <template #loading>
+          <div
+            class="loading spinner-border"
+            role="status">
+            <span class="sr-only">{{ $t('commons.loading') }}</span>
+          </div>
+        </template>
+        <template #error>
+          <div class="d-flex flex-column justify-content-center p-4 h-100">
+            <h5 class="text-center">
+              {{ $t('commons.try-again') }}
+            </h5>
+          </div>
+        </template>
+        <template #empty>
+          <div class="d-flex flex-column justify-content-center p-4 h-100">
+            <h5 class="text-center">
+              {{ $t('commons.empty') }}
+            </h5>
+          </div>
+        </template>
+      </m-response-control>
+      <div
+        v-else
+        class="consumer-loan__row row">
         <loan-settings
           class="col-lg-6" />
         <simulation
@@ -22,7 +50,7 @@
 </template>
 
 <script>
-import { getURLParams } from '@modyo/financial-commons';
+import { getURLParams, MResponseControl } from '@modyo/financial-commons';
 import { mapState, mapGetters } from 'vuex';
 import LoanSettings from './components/LoanSettings/LoanSettings.vue';
 import InitialMessage from './components/LoanMessages/InitialMessage.vue';
@@ -36,6 +64,12 @@ export default {
     InitialMessage,
     MaxQuotaMessage,
     Simulation,
+    MResponseControl,
+  },
+  data() {
+    return {
+      apiStatus: false,
+    };
   },
   computed: {
     ...mapState(['account']),
@@ -58,9 +92,15 @@ export default {
     },
   },
   created() {
+    this.apiStatus = 'isLoading';
     const client = parseInt(getURLParams('client'), 10) || 1;
     this.$store.commit('SET_PARAM_CLIENT_ID', client);
-    this.$store.dispatch('DO_DATA_INITIALIZATION');
+    this.$store.dispatch('DO_DATA_INITIALIZATION')
+      .then(() => {
+        this.apiStatus = false;
+      }).catch(() => {
+        this.apiStatus = 'hasError';
+      });
   },
 };
 </script>
